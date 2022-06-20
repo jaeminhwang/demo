@@ -1,0 +1,44 @@
+{
+  "statusCode": 200,
+  "success": true,
+  "items": [
+    {
+      "code": "HQ1QT02BE",
+      "name": "L-QUILTING(엘퀼팅",
+      "brandName": "루이까또즈 ",
+      "state": "soldout",
+      "priceType": "price",
+      "priceValue": "430000",
+      "discountPrice": "258000",
+      "discountRate": "40",
+      "currency": "KRW",
+      "images": [
+        "https://d1w5792kdt32bd.cloudfront.net/uploads/1653007790872.jpg"
+      ],
+      "link": "https://www.stylelq.com/fr/product/productView.do?PRD_MST_CD=LLHQ1QT02FA9BE0011&searchCtg=119",
+      "id": "6286e5af53652b00131bcecf",
+      "createdAt": "2022-05-20T00:49:51.164Z",
+      "isShow": false,
+      "rolling": true
+    },
+    {
+      "code": "SL4AL10R",
+      "name": "루이까또즈 여성장지갑 ",
+      "brandName": "루이까또즈",
+      "state": "normal",
+      "priceType": "price",
+      "priceValue": "220000",
+      "discountPrice": "200000",
+      "discountRate": "9",
+      "currency": "KRW",
+      "images": [
+        "https://d1w5792kdt32bd.cloudfront.net/uploads/1652936840273.jpg"
+      ],
+      "link": "https://www.stylelq.com/fr/product/productView.do?PRD_MST_CD=LLSL4AL10FG0RE0011&searchCtg=122",
+      "id": "6285d08853652b00131bbe16",
+      "createdAt": "2022-05-19T05:07:20.724Z",
+      "isShow": false,
+      "rolling": true
+    }
+  ]
+}
