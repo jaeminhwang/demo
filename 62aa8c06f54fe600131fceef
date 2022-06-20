@@ -1,0 +1,61 @@
+{
+  "statusCode": 200,
+  "success": true,
+  "id": "62aa8c06f54fe600131fceef",
+  "manager": {
+    "id": "62847b91eddfae0012e13ff0",
+    "name": "최길영"
+  },
+  "form": "live",
+  "type": "normal",
+  "status": "standby",
+  "meta": {
+    "name": "루이까또즈 방송 예정 ",
+    "scheduledStartTime": "2022-06-30T02:00:00.000Z",
+    "scheduledEndTime": "2022-06-30T03:00:00.000Z",
+    "basicImage": "https://d2y57k0d0v8lfl.cloudfront.net/uploads/62847b19f4958e0014ddad3f/broadcast/img/2022/6/16/10/6c007fd6-8867-49e7-b9a1-4d3337d8327a.jpeg"
+  },
+  "enableVertical": true,
+  "benefits": {
+    "title": "",
+    "desc": ""
+  },
+  "template": {
+    "type": "product",
+    "broadcast": {
+      "images": [
+        {
+          "main": false,
+          "link": "https://d2y57k0d0v8lfl.cloudfront.net/uploads/62847b19f4958e0014ddad3f/broadcast/img/2022/6/16/10/af580d7f-c674-42f2-a8dc-49880eb41e49.jpeg"
+        }
+      ]
+    }
+  },
+  "isView": true,
+  "faqCount": 0,
+  "chat": {
+    "chatCount": 0,
+    "likeCount": 0,
+    "joinCount": 276,
+    "uvCount": 47,
+    "cntCount": 3,
+    "productCount": 0
+  },
+  "isDel": false,
+  "isRerun": false,
+  "productCount": 2,
+  "isReloadChat": false,
+  "client": {
+    "id": "62847b19f4958e0014ddad3f",
+    "name": "루이까또즈"
+  },
+  "chapters": [
+    
+  ],
+  "banners": [
+    
+  ],
+  "coupons": [
+     "223233"
+  ]
+}
