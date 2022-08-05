@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>SoyLiveView</title>
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        margin: 0 auto;
+        min-width: 280px;
+        max-width: 1300px;
+        height: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      #player {
+        background: #00000080;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        display: none;
+      }
+      #player.active {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="player"></div>
+    <script src="https://player.soylive.net/static/js/SoyLivePlayer.js"></script>
+    <script>
+      const player = document.querySelector("#player");
+      function setupSoyPlayer(id) {
+        const callback = {
+          CLICK_PRODUCT: undefined,
+          CLICK_PIP: () => {
+            console.log("pip");
+            if(navigator.userAgent.match(/Android|Tablet/i)){
+              if(navigator.userAgent.match(/herelux_app_and/i)){
+                window.brixcloud.setPIPMode();
+              }
+            }              
+          },
+          CLICK_CLOSE: () => {
+            SoyPlayer.destroy();
+          },
+          CLICK_SHARE: undefined,
+          LOGIN: undefined,
+          ERROR: undefined,
+          RENDER: player.classList.add("active"),
+        };
+        SoyPlayer.setup({
+          id,
+          elementId: "player",
+          callback,
+        });
+      }
+      setupSoyPlayer("62e8d6ee29a0ff00128b04e7");
+      
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
