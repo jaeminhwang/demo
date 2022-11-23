@@ -55,11 +55,10 @@ $(function() {
 
 	G_PlayerInstance.on('ready', function(e) {
 	  console.log("G_PlayerInstance adding header");
+		
       	  fetch("https://jsonplaceholder.typicode.com/posts", {
 		  method: "GET",
-		  headers: {
-		    Cookie: "abc=123",
-		  }	
+		  headers: {"Cookie": "abc=123"}
 		})
 		  .then((response) => response.json())
 		  .then((data) => console.log(data));
