@@ -17,8 +17,6 @@
 <script type="text/javascript">
 //<![CDATA[
 $(function() {
-	document.cookie = "aaa=" + "abc";
-
 	// jw player default값 설정	
 	var jwDefaults = {
 		"aspectratio" : "16:9",			// 화면 배율
@@ -51,17 +49,12 @@ $(function() {
 	G_PlayerInstance = jwplayer("player");
 	G_PlayerInstance.setup({
 		"file" : file,
-		onXhrOpen: function(xhr, url) {
-			console.log("reqeust adding header");
-            xhr.setRequestHeader('Cookie','token=st=1669181868~exp=1669185468~acl=/live/video/ls-20221118095800-5jKPE/*~hmac=1b141895614d34cf8f839957de8a047efc39e9a05f7bf436fdd9e0f89ef176e7');
-        },
 		"key" : streamKey				// 영상 고유키 값
 	});
 
 	G_PlayerInstance.on('ready', function(e) {
 	  console.log("G_PlayerInstance adding header");
-	  const encoded = encodeURIComponent('st=1669181868~exp=1669185468~acl=/live/video/ls-20221118095800-5jKPE/*~hmac=1b141895614d34cf8f839957de8a047efc39e9a05f7bf436fdd9e0f89ef176e7')
-      document.cookie = "token=" + encoded;
+      	  document.cookie = "token=" + token;
 
 	});
 
