@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name='description' content='경륜경정온라인발매시스템 스피드온'>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    
+	<script type="text/javascript" src="https://cast.kcycle.or.kr/vod/pds/speedon/js/jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="https://cast.kcycle.or.kr/vod/pds/speedon/js/jquery/jquery-ui-1.12.1.min.js"></script>
+	<script type="text/javascript" src="https://cast.kcycle.or.kr/vod/pds/speedon/js/bluebird.js"></script>
+
+    <script type="text/javascript" src="jwplayer.js"></script><!-- JW Player Core -->
+</head>
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+	document.cookie = "aaa=" + "abc";
+
+	// jw player default값 설정	
+	var jwDefaults = {
+		"aspectratio" : "16:9",			// 화면 배율
+		"controls" : true,				// 기본 컨트롤 표기
+		"displaytitle" : false,			// 영상제목표시(default: true)
+		"displaydescription" : false,	// 영상설명표시(default: true)
+		"stretching" : "fill",	  		// 영상크기조정(uniform:가로세로비율 유지하며 JW 치수에 맞춤, exactfit:가로세로비율 유지안하며 JW 치수에 맞춤, fill:가로세로비율 유지하며 JW 꽉 차게, none:영상실제크기로 나옴)
+		"width" : 380,					// 영상 너비
+		"height" : 213,					// 영상 높이
+		"logo" : {						// watermark
+			"file" : "https://m.speedon.or.kr/images/h1Logo.png",
+			"hide" : false,
+			"position": "top-left"
+		},
+		"liveTimeout" : 30,				// 라이브 타임아웃(30초)	  	
+		"preload" : "metadata",			// none, metadata, auto	  	
+		"viewability" : false,			// 비디오를 볼수없을때 재생 중지 여부
+		"autoplaytimer" : 0,			// 자동시작 대기시간(0초:즉시재생)
+		"autostart" : true,				// 동영상 자동 실행
+		"mute" : false					// 뮤트
+	};
+	jwplayer.defaults = jwDefaults;
+
+	// jw player
+	var streamKey = "cxu5XGd7htj7G4UAfrq/H4/jw3Svl3JSeOzkFz85dhpp6wtn";
+	var file = "https://xdlsfeeomxim14541325.cdn.ntruss.com/live/video/ls-20221118095800-5jKPE/playlist.m3u8";
+	var token = "st=1669174636~exp=1669178236~acl=/*~hmac=e2533320d433c29c7a95fb5d3fb9718ee960922a00544fbca536e81bc1ddaf41"
+
+	// JW Player 표출
+	G_PlayerInstance = jwplayer("player");
+	G_PlayerInstance.setup({
+		"file" : file,
+		onXhrOpen: function(xhr, url) {
+			console.log("reqeust adding header");
+            xhr.setRequestHeader('Cookie','token=st=1669181868~exp=1669185468~acl=/live/video/ls-20221118095800-5jKPE/*~hmac=1b141895614d34cf8f839957de8a047efc39e9a05f7bf436fdd9e0f89ef176e7');
+        },
+		"key" : streamKey				// 영상 고유키 값
+	});
+
+	G_PlayerInstance.on('ready', function(e) {
+	  console.log("G_PlayerInstance adding header");
+	  const encoded = encodeURIComponent('st=1669181868~exp=1669185468~acl=/live/video/ls-20221118095800-5jKPE/*~hmac=1b141895614d34cf8f839957de8a047efc39e9a05f7bf436fdd9e0f89ef176e7')
+      document.cookie = "token=" + encoded;
+
+	});
+
+});
+//]]>
+</script>
+<body>
+	<article class="racingInfo" id="racingInfo7">
+		<div id="player"></div>
+	</article>
+</body>
+</html>
