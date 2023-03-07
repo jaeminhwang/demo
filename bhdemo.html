@@ -1,18 +1,62 @@
-<div id="brixhubview"></div>
-<script src="https://stage.view.brixhub.net/static/js/BrixhubView.js"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <style>
+      body,
+      html {
+        margin: 0
+      }
 
-<div id="soyview"></div>
+      body {
+        margin: 0 auto;
+        max-width: 1300px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+      }
 
-<script>
-window.BrixhubView.setup({
-    elementId: 'soyview',
-    clientId: '7YOUHHS5J8ZVDL5Z',
-    type: 'default'|'simple'|'mixed', // 없으면 기본값 default 적용
-    dataType: 'all-new',
-    tag: '스쿼드엑스챌린지',
-    apiToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJzZXJ2aWNlIiwiY2xpZW50SUQiOiI3WU9VSEhTNUo4WlZETDVaIiwiaWF0IjoxNjc2MzY5MzY0LCJleHAiOjE5OTE5NDUzNjR9.14waJ64LnKTx2Vo9ZwDml5UrBpV9pQqv8MrtggsR_OE'
-});
-
-
-
-</script>
+      ::-webkit-scrollbar {
+        display: none
+      }
+    </style>
+    <title>Brixhub View</title>
+    <script src="https://stage.view.brixhub.net/static/js/BrixhubView.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    function setupBrixhubView() {       
+      const e = new URLSearchParams(window.location.search),
+        t = e.get("type"),
+        o = e.get("autoPlay"),
+        a = e.get("apiToken"),
+        i = {
+          CLICK_SHORTS: e => {
+            console.log("[CLICK_SHORTS]: ", e), window.location.href = `https://stage.player.brixhub.net?bh_id=${e.assetID}`
+          },
+          CLICK_MORE_SHORTS: e => {
+            console.log("[CLICK_MORE_SHORTS]: ".props)
+          }
+        };
+      a ? BrixhubView.setup({
+        apiToken: a,
+        elementId: "root",
+        callback: i,
+        type: t,
+        autoPlay: o
+      }) : BrixhubView.setup({
+        apiToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJzZXJ2aWNlIiwiY2xpZW50SUQiOiI3WU9VSEhTNUo4WlZETDVaIiwiaWF0IjoxNjc2MzY5MzY0LCJleHAiOjE5OTE5NDUzNjR9.14waJ64LnKTx2Vo9ZwDml5UrBpV9pQqv8MrtggsR_OE",
+        elementId: "root",
+        callback: i,
+        type: t,
+        autoPlay: o
+      })
+    }
+    window.addEventListener("load", setupBrixhubView)
+  </script>
+</html>
