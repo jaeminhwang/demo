@@ -33,7 +33,7 @@
     function setupBrixhubView() {       
       
       const e = new URLSearchParams(window.location.search);
-      const a = e.get("apiToken");
+      let a = e.get("apiToken");
       
       if(!a) { a = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlblR5cGUiOiJzZXJ2aWNlIiwiY2xpZW50SUQiOiI3WU9VSEhTNUo4WlZETDVaIiwiaWF0IjoxNjc2MzY5MzY0LCJleHAiOjE5OTE5NDUzNjR9.14waJ64LnKTx2Vo9ZwDml5UrBpV9pQqv8MrtggsR_OE";}
       
