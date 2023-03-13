@@ -33,7 +33,7 @@
     function setupBrixhubView() {       
       
       const e = new URLSearchParams(window.location.search);
-      let a = e.get("apiToken");
+      let a = e.get("clientId");
       
       if(!a) { a = "";}
       
@@ -41,14 +41,14 @@
         o = e.get("autoPlay"),
         i = {
           CLICK_SHORTS: e => {
-            console.log("[CLICK_SHORTS]: ", JSON.stringify(e)), window.location.href = `https://jaeminhwang.github.io/demo/bhplayerdemo.html?bh_id=${e.assetID}&apiToken=${a}`
+            console.log("[CLICK_SHORTS]: ", JSON.stringify(e)), window.location.href = `https://jaeminhwang.github.io/demo/bhplayerdemo.html?bh_id=${e.assetID}&clientId=${a}`
           },
           CLICK_MORE_SHORTS: e => {
             console.log("[CLICK_MORE_SHORTS]: ".props)
           }
         };
       a ? BrixhubView.setup({
-        apiToken: a,
+        clientId: a,
         elementId: "root",
         callback: i,
         type: t,
