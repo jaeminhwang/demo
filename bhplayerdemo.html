@@ -38,10 +38,21 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
+    <script>      
       window.addEventListener("load", (async () => {
-        const e = new URLSearchParams(window.location.search);
-        console.log(e);
+
+        var url = window.location.search.replace('?','');
+        var params = {};
+        var urlArray = url.split('&');
+
+        for(var i in urlArray)
+        {
+          var param = urlArray[i].split('=');
+          params[param[0]] = param[1]; 
+        }      
+        console.log(params);
+                
+        const e = new URLSearchParams(window.location.search);        
         console.log(e.get("apiToken"));
         
           i = e.get("clientId"),
