@@ -41,6 +41,7 @@
     <script>
       window.addEventListener("load", (async () => {
         const e = new URLSearchParams(window.location.search);
+        console.log(e);
         console.log(e.get("apiToken"));
         
           i = e.get("clientId"),
@@ -50,7 +51,7 @@
           apiToken: n,
           clientId: i,
           id: a
-        }) : BrixhubPlayer.setup({
+        }) : BrixhubPlayer.setup({          
           e
         })
       }))
